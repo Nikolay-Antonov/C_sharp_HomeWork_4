@@ -37,14 +37,14 @@ int[] CreateArray(int size)  // 2. Создание массива
 
 void GetBin(int[] colNumber)   // 3. Заполнение массива 0 и 1
 { 
-    
+    colNumber[0] = 1;
     int count = colNumber.Length;
-    for (int i = 0; i < count; i++)
+    for (int i = 1; i < count; i++)
 
     { 
         colNumber[i] = Random.Shared.Next(2);
     }
-    colNumber[0] = 1;
+    
 }
 
 string Print(int[] numbers)   // 4. Печать массива
@@ -73,7 +73,7 @@ int countByUser = GetNumberByUser("Введите N: ");
 int[] list = CreateArray(countByUser);
 GetBin(list);
 string result = Print(list);
-ConvertBinToDec(result);
+
 int Decimal = ConvertBinToDec(result);
 Console.WriteLine(result + $"  >>  {Decimal}");
 
